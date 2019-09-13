@@ -5,7 +5,6 @@ import analyze from '../components/analyze'
 
 Vue.use(VueRouter)
 
-
 export const router = new VueRouter({
     routes: [
         {
@@ -18,5 +17,5 @@ export const router = new VueRouter({
             name: 'analyze',
             component: analyze
         }
-    ]
+    ],
 })

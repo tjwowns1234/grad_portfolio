@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+    <script type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=217be8e5a9b6056dd74ee490b095f3d5&libraries=services,clusterer,drawing"></script>
+  <script>
+    var container = null;
+    var mapOptions = null;
+    var map = null;
+    var mapTypeControl = null;
+    var zoomControl = null;
+    var geocoder = null;
+    var coords = null;
+    var marker = [];
+    var inContent = null;
+    var infowindow = null;
+    var customOverlay = null;
+    let ps = null;
+    let clusterer = null;
+    let searchMarker = null;
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>my-project</title>
   </head>
   <body>

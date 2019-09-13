@@ -5,13 +5,13 @@
 
 
 ### 메인화면
-![main](./readmeimage/main.png)
+![main](./readmeimage/main.PNG)
 
 ### 마커 마우스오버
-![mouseover](./readmeimage/mouseover.png)
+![mouseover](./readmeimage/mouseover.PNG)
 
 ### 마커 클릭
-![mouseclick](./readmeimage/mouseclick.png)
+![mouseclick](./readmeimage/mouseclick.PNG)
 
 ### 분석화면
-![analysis](./readmeimage/analysis.png)
+![analysis](./readmeimage/analysis.PNG)

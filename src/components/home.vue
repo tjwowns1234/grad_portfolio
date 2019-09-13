@@ -346,7 +346,7 @@ export default {
         getCurAddrInfo : function() {
             // alert("받을대상 : " + this.curAddr);
             this.isLoading = true;
-            let targetAddr = "http://49.143.65.45:5000/api/getCurAddrInfo?addr="+this.curInfo.addr + ' '+ this.curInfo.name;
+            let targetAddr = "http://localhost:5000/api/getCurAddrInfo?addr="+this.curInfo.addr + ' '+ this.curInfo.name;
             // let targetAddr = "http://113.198.137.210:5000/api/getCurAddrInfo?addr="+this.curInfo.addr + ' '+ this.curInfo.name;
             axios.get(targetAddr).then(res =>{
                 // this.isLoading = false;
@@ -380,7 +380,7 @@ export default {
 
             this.isPageLoading=true;
             this.isAreadLoading = true;
-            targetAddr = "http://49.143.65.45:5000/api/area_info?addr="+this.curInfo.addr + ' '+ this.curInfo.name;
+            targetAddr = "http://localhost:5000/api/area_info?addr="+this.curInfo.addr + ' '+ this.curInfo.name;
             // targetAddr = "http://113.198.137.210:5000/api/area_info?addr="+this.curInfo.addr + ' '+ this.curInfo.name;
             axios.get(targetAddr).then(res =>{
                 this.isPageLoading=false;
@@ -394,7 +394,7 @@ export default {
         },
         targetAnalysis : function(){
             this.isLoading = true;
-            let targetAddr = "http://49.143.65.45:5000/api/one_gu_data?addr="+this.curInfo.addr + ' '+ this.curInfo.name;
+            let targetAddr = "http://localhost:5000/api/one_gu_data?addr="+this.curInfo.addr + ' '+ this.curInfo.name;
             axios.get(targetAddr).then(res =>{
                 this.isLoading = false;
                 this.curInfo.guName = res.data["구이름"]
@@ -461,7 +461,7 @@ export default {
             });
 
             this.isLoading = true;
-            targetAddr = "http://49.143.65.45:5000/api/one_dong_data?addr="+this.curInfo.addr + ' '+ this.curInfo.name;
+            targetAddr = "http://localhost:5000/api/one_dong_data?addr="+this.curInfo.addr + ' '+ this.curInfo.name;
             axios.get(targetAddr).then(res =>{
                 this.isLoading = false;
                 this.curInfo.dongName = res.data["동이름"]
@@ -528,7 +528,7 @@ export default {
             });
 
             this.isLoading = true;
-            targetAddr = "http://49.143.65.45:5000/api/si_data?addr="+this.curInfo.addr + ' '+ this.curInfo.name;
+            targetAddr = "http://localhost:5000/api/si_data?addr="+this.curInfo.addr + ' '+ this.curInfo.name;
             axios.get(targetAddr).then(res =>{
                 this.isLoading = false;
                 this.curInfo.siName =  this.curInfo.addr.split(" ")[1];
@@ -973,7 +973,7 @@ export default {
         });
 
         let vm = this;
-        axios.get("http://49.143.65.45:5000/api/targetList").then(res =>{
+        axios.get("http://localhost:5000/api/targetList").then(res =>{
             vm.targetResult = res.data;
             let tmpResult = vm.targetResult;
             for( let i =0 ; i<tmpResult.length; i++)

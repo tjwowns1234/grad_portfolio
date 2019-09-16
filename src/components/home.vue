@@ -153,9 +153,9 @@
                     <apexchart class="chart" height="300px" type="line" :options="chartOptions_4" :series="series_4"/>
                 </div>
             </b-tab>
-            <b-tab title="Big Data">
+            <b-tab title="Big Data" @click = "toAnalysis()">
                 <div style="overflow-y:hidden">
-                    <p>준비중...</p>
+                    <h2>구버전 리포트로 넘어갑니다</h2>
                     <h5 class="cardBodyText">{{curInfo.addr + ' '+ curInfo.name}} 분석결과</h5>
                     <apexchart class="chart" height="300px" type="line" :options="chartOptions_1" :series="series_1"/>
                 </div>
@@ -276,6 +276,7 @@ export default {
                 siName : "",
                 dongName : "",
             },
+            targetAddrName : "",
             area_info : [
                 {
                     "거래가격" : "",
@@ -948,6 +949,9 @@ export default {
                 }
             ];
         },
+        toAnalysis : function() {
+            window.open(this.targetAddrName, "_blank");
+        },
     },
     mounted(){
         this.fillData();
@@ -1073,7 +1077,7 @@ export default {
                         vm.curInfo.minPrice = minPrice;
                         vm.curInfo.maxPrice = maxPrice;
                         vm.curInfo.duration = duration;
-
+                        vm.targetAddrName = 'http://localhost:5000/report?name='+vm.curInfo.addr + ' ' + vm.curInfo.name;
                         vm.area_info = [];
                         
                         vm.getCurAddrInfo();
